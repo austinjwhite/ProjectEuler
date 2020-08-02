@@ -4,11 +4,11 @@ a = 3983
 t = 0
 n = 1
 counteri = 0
-for i in range(3, 900):
+for i in range(0, 350):
 
     k = (3 * n)
     n += 1
-    if k < 999:
+    if k < 1000:
         t = t + k
         counteri += 1
         #print(k)
@@ -21,11 +21,11 @@ print(counteri)
 p = 0
 m = 1
 counterj = 0
-for j in range(3, 900):
+for j in range(0, 200):
 
     l = (5 * m)
     m += 1
-    if l < 999:
+    if l < 1000:
         p = p + l
         counterj += 1
         #print(l)
@@ -34,11 +34,11 @@ print(counterj)
 r = 0
 c = 1
 counterz = 0
-for z in range(3, 900):
+for z in range(0, 500):
 
     v = (15 * c)
     c += 1
-    if v < 999:
+    if v < 1000:
         r = r + v
         counterz += 1
         #print(l)
