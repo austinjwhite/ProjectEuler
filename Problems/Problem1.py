@@ -2,55 +2,42 @@
 #Find the sum of all the multiples of 3 or 5 below 1000.
 
 #variables for counting mulitples of 3
-a = 3983
-t = 0
-n = 1
-counteri = 0
-while n in range(1, 1000):
+t = 0 #total for set of 3s
+n = 1 #nth root
 
-    k = (3 * n)
+while n in range(1, 1000): #iterator
+
+    k = (3 * n) #function k^n where n is multiples of 3
     n += 1
-    if k <= 990:
+    if k < 1000: #ensures that we dont add values outside of 1000 to the total
         t = t + k
-        counteri += 1
 
 #variables for counting mulitples of 5
-#print(counteri)
-p = 0
-m = 1
-counterj = 0
-while m in range(1, 1000):
+p = 0 #total for set of 5s
+m = 1 #nth root
 
-    l = (5 * m)
+while m in range(1, 1000): #iterator
+
+    l = (5 * m) #function l^m where m is multiples of 5
     m += 1
-    if l <= 990:
+    if l < 1000: #ensures that we dont add values outside of 1000 to the total
         p = p + l
-        counterj += 1
-
-
 
 #variables for counting mulitples of 15
-#print(counterj)
-r = 0
-c = 1
-counterz = 0
+r = 0 #total for set of 15s
+c = 1 #nth root
 
-while c in range(1, 67):
+while c in range(1, 67): #iterator
 
-    v = (15 * c)
+    v = (15 * c) #function v^c where c is multiples of 15
     c += 1
-    if v <= 990:
+    if v < 1000: #ensures that we dont add values outside of 1000 to the total
         r = r + v
-        counterz += 1
-        #print(l)
-    #print(p)
-#print(counterz)
-#print("a is:", a)
-#print("t is:", t)
-#print("p is:", p)
-#print("r is:", r)
-print("a + t + p - v is:", (a + t + p - r))
 
+print("t + p - r is:", (t + p - r)) #we substract r because the set of 15
+                                    #multiples contains solutions from both the
+                                    #set of 3 and 5, so we must remove one of
+                                    #the duplicate sets (either 3 or 5)
 #OUTPUT:
-#a + t + p - v is: 233168
+#t + p - v is: 233168
 #[Finished in 0.144s]
