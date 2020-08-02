@@ -50,3 +50,7 @@ while c in range(1, 67):
 #print("p is:", p)
 #print("r is:", r)
 print("a + t + p - v is:", (a + t + p - r))
+
+#OUTPUT:
+#a + t + p - v is: 233168
+#[Finished in 0.144s]
