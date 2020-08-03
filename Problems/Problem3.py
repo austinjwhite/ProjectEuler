@@ -2,8 +2,8 @@
 #
 # What is the largest prime factor of the number 600851475143 ?
 
-# n = 13195
-def is_prime(n):
+
+def is_prime(n): #boolean function to test if n is prime
   if n == 2 or n == 3: return True
   if n < 2 or n%2 == 0: return False
   if n < 9: return True
@@ -20,37 +20,20 @@ def is_prime(n):
     if n % (f+2) == 0: return False
     f += 6
   return True
-#
-#
-# while is_prime(n) == False:
-#
-#     #if counter < 50:
-#         if is_prime(n) == True:
-#             print(n)
-#         n += 1
-
-# def intAssign(div):
-#
-#     return null
 
 
+n = 600851475143 #what is the largest prime factor of this integer?
+divisor = 2 #iterates the divisor of n to find which numbers divide without remainder
+count = 0
 
-n = 600851475143
-divisor = 2
-while is_prime(n) == False:
-    if(n % divisor) == 0:
-        n /= divisor
+while is_prime(n) == False: #loop until the number becomes prime
+    count += 1
 
-        #intAssign(divisor)
+    if(n % divisor) == 0:   #if it has no remainder
+        n /= divisor        #divide by the current divisor
     else:
-        divisor += 1
-        #print("divisor +1")
-    print(n)
-    #print("while loops")
+        divisor += 1        #if it does have a remainder, that mean that we hit
+                            #a non-factor, so we bump up the divisor to check again
 
-# if (n % 2) == 0:
-#     n /= 2
-# elif(n % 3) == 0:
-#     n /= 3
-# elif(n % 4) == 0:
-#     n /= 4
+print(n)
+print("iterations to reach largest prime:", count)
