@@ -2,7 +2,7 @@
 #
 # What is the largest prime factor of the number 600851475143 ?
 
-n = 10
+# n = 13195
 def is_prime(n):
   if n == 2 or n == 3: return True
   if n < 2 or n%2 == 0: return False
@@ -20,11 +20,37 @@ def is_prime(n):
     if n % (f+2) == 0: return False
     f += 6
   return True
+#
+#
+# while is_prime(n) == False:
+#
+#     #if counter < 50:
+#         if is_prime(n) == True:
+#             print(n)
+#         n += 1
+
+# def intAssign(div):
+#
+#     return null
 
 
+
+n = 600851475143
+divisor = 2
 while is_prime(n) == False:
+    if(n % divisor) == 0:
+        n /= divisor
 
-    #if counter < 50:
-        if is_prime(n) == True:
-            print(n)
-        n += 1
+        #intAssign(divisor)
+    else:
+        divisor += 1
+        #print("divisor +1")
+    print(n)
+    #print("while loops")
+
+# if (n % 2) == 0:
+#     n /= 2
+# elif(n % 3) == 0:
+#     n /= 3
+# elif(n % 4) == 0:
+#     n /= 4
