@@ -4,17 +4,57 @@
 
 x = 999
 y = 999
+xy = 0
+#output = 0
+largest = "Empty"
 
+
+def flip(x):
+    return x[::-1]
 def palindrome(num):
-    if ((num % 2) != 0): return False
+    newnum = str(num)
+    if flip(newnum) == newnum:
+        return True
+    return False
+
+while y > 0:
+        if (x > 0):
+
+            xy = x * y
+            palindrome(xy)
+            if palindrome(xy) == True and int(xy) > 900000:
+               print("The palindrome is", str(xy) + "!")
+
+            x -= 1
+
+        else:
+            x = 999
+            y -= 1
+
+
+#993 * 913 = 906609
 
 
 
 
+    #
+    # for i in range(0, 1000):
+    #     xy = x * y
+    #     palindrome(xy)
+    #     x -= 1
+    #     print(xy)
+    #
+    #     if palindrome(xy) == True:
+    #         print(largest)
+    #
 
-    return True
 
+# test function below
 
-
-if palindrome(output) == True:
-    print(output)
+# test = 9000001000009
+#
+#
+# if palindrome(test) == True:
+#     print("The palindrome is", str(test) + "!")
+# else:
+#     print("not a palindrome")
