@@ -2,32 +2,22 @@
 #
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-def bound(n):
-    boundnum = 1
+def math(tester): #function that tests whether a number is divisible by 1, 2, ... 20
+    num = 20
     total = 0
-    for i in range(0, 25):
-        boundnum += 1
-
-        if (n % boundnum) == 0:
-            total += 1
-            print(n, "Num to test")
-            # print(boundnum, "integer to test it with")
-            # print(n % boundnum, "the remainder")
-            print(total, "hits")
-        else: return False
-        if total == 19: return True
+    while num > 0 and (tester % num) == 0: #test each number through 20, and make sure it has no remainder
+        remainder = tester / num
+        num -= 1
+        total += 1
+        if total == 20: #if a remainder is found, dont include it in the final print statement
+            print("number divisible by 1 - 20:", testnum)
+            print("multiplier:", multiplier)
 
 
-    return False
+multiplier = 999999 #we increment down from a large number to find the smallest testnum
 
-
-def calc(n):
-    if (n % 2) != 0: return False
-    if bound(n) == True: return True
-
-    return False
-x = 10
-while calc(x) == False:
-    x += 1
-
-print("smallest int is:",x)
+while(multiplier > 999):
+    testnum = 2432902008176640000 / ((3628800) * multiplier) #this formula is y = (20!)/((10!) * x)
+    if (testnum % 2) == 0:                                   #where y is the number to test, x is the multiplier
+        math(testnum)                                        #see Prob5ScratchStuff for more details
+    multiplier -= 1
