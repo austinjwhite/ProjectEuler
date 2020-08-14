@@ -45,6 +45,8 @@
 #     print(n % x, n / x)
 
 
+#-----------------original math that found the pattern----------------#
+
 
 # 10! = 3628800
 #
@@ -56,7 +58,14 @@
 # 3628800 / 1440 = 2520
 #
 # 20! = 2432902008176640000
-#
+
+
+#---------------------------------------------------------------#
+
+
+
+
+
 # 20! / 20 / 19 / 18 / 17 * 2 = 41845579776000
 #
 # 2432902008176640000 / 41845579776000 = 58140
@@ -80,11 +89,23 @@
 #
 # print( "")
 
-#20 factorial
 
-#2432902008176640000 / 20 / 19 / 18 / 17 / 16 / 15 / 14 / 13 / 12 / 11 = 3628800
+#------------------------formula explained----------------------------------#
+
+
+# 20! = 2432902008176640000
+# (2432902008176640000 / 20 / 19 / 18 / 17 / 16 / 15 / 14 / 13 / 12 / 11) = 3628800 <--- this also happens to be 10!
+# 3628800 * 2880 = 10450944000 #2880 is the multiplier
+# 2432902008176640000 / 10450944000 = -----> 232792560 <-------
+#
 # i found the above formula by testing each divisor (20 / 19 / 18...) one after the other and checking
-#the remainder of each digit 20 through 1 to verify that 3628800 is divisible by each.
+# the remainder of each digit 20 through 1 to verify that 3628800 is divisible by each with the code below.
+
+
+
+#--------------------------------------------------------------------------#
+
+
 
 
 # def math(tester):
@@ -94,31 +115,39 @@
 #         print(remainder, num)
 #         num -= 1
 
-def math(tester):
-    num = 20
+
+
+def mathy(tester, NUMBER):
+
+    num = NUMBER
+
     total = 0
     while num > 0 and (tester % num) == 0:
         remainder = tester / num
         num -= 1
         total += 1
-        if total == 20:
+        if total == NUMBER:
+            #print("")
             print(remainder, num)
-            print("")
             print("number to try", testnum)
-            print("multiplier:", multiplier)
+            # print("multiplier:", multiplier)
 
-
+NUMBER = 20 #number to test the factorial of
 multiplier = 999999
-
+import math
+fact = math.factorial(NUMBER)
+print(fact)
+augfact = math.factorial((NUMBER / 2))
 while(multiplier > 999):
-    testnum = 2432902008176640000 / ((3628800) * multiplier)
+    testnum = fact / (augfact * multiplier)
 
+    #print(testnum)
 
-    if (testnum % 2) == 0:
+    if (testnum % 2) != 0:
         # print("")
-        # print("number to try", testnum)
+        #print("number to try", testnum)
         # print("multiplier:", multiplier)
-        math(testnum)
+        mathy(testnum, NUMBER)
 
     multiplier -= 1
 
