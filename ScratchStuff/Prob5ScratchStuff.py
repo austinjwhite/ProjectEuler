@@ -131,6 +131,9 @@ def mathy(tester, NUMBER):
             print(remainder, num)
             print("number to try", testnum)
             # print("multiplier:", multiplier)
+print("Enter an even number to factorialize:")
+
+x = input()
 
 NUMBER = 20 #number to test the factorial of
 multiplier = 999999
