@@ -15,6 +15,8 @@
 #
 # What is the value of the first triangle number to have over five hundred divisors?
 
+import pandas as pd
+import numpy as np
 
 def is_prime(n): #boolean function to test if n is prime
   if n == 2 or n == 3: return True
@@ -33,6 +35,51 @@ def is_prime(n): #boolean function to test if n is prime
     if n % (f+2) == 0: return False
     f += 6
   return True
+
+# num = 840
+# def primefac(n):
+#     product = -999
+#     factors = np.array([n, 1])
+#     oddtest = 3
+#     while n > 1:
+#         # print(oddtest, n, factors, n % oddtest, "n/odd",n / oddtest)
+#         if n % 2 == 0:
+#             if n == 2:
+#                 return factors
+#             n = n / 2
+#             n = int(n)
+#             factors = np.append(factors, 2)
+#         else:
+#             if n % oddtest == 0:
+#                 # print(oddtest, n**2)
+#                 factors = np.append(factors, oddtest)
+#                 # print("appended", oddtest)
+#                 n = n / oddtest
+#                 n = int(n)
+#                 oddtest == 3
+#                 # print("reset oddtest", oddtest)
+#                 if n == oddtest:
+#                     # print('n = oddtest, appending and returning')
+#                     factors = np.append(factors, oddtest)
+#                     return factors
+#             else:
+#                 oddtest += 2
+#
+#     q = 0
+#     z = 0
+#     allfact = np.array([])
+#     while q < len(factors):
+#         allfact = np.append(allfact, (factors[q] * factors[z]))
+#         z += 1
+#         if z = 7:
+#             z = 0
+#             q += 1
+#     return allfact
+
+
+
+
+#print("array is", primefac(num))
 
 n = 0
 count = 0
